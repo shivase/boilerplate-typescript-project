@@ -1,0 +1,22 @@
+{
+  "bail": 1,
+  "verbose": true,
+  "preset": "ts-jest",
+  "testMatch": ["**/*.test.ts"],
+  "testEnvironment": "node",
+  "testPathIgnorePatterns": ["<rootDir>/node_modules/"],
+  "transformIgnorePatterns": ["/node_modules/"],
+  "transform": {
+    ".+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        "sourceMaps": true,
+        "jsc": {
+          "parser": {
+            "syntax": "typescript"
+          }
+        }
+      }
+    ]
+  }
+}
